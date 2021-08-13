@@ -1,3 +1,9 @@
+.burgerMenu {
+  height: 100px;
+  @include tablet() {
+    display: none;
+  }
+}
 .bm {
   &-menu {
     @include tablet() {

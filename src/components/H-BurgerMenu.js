@@ -15,14 +15,16 @@ const BurgerMenu = () => {
     }
   };
   return (
-    <Menu isOpen={isClosed} width={280}>
-      <Link to="/" className="menu__item" onClick={closeMenuHandler}>
-        Home
-      </Link>
-      <Link to="/favoritos" className="menu__item" onClick={closeMenuHandler}>
-        Favorites
-      </Link>
-    </Menu>
+    <div className="burgerMenu">
+      <Menu isOpen={isClosed} width={280}>
+        <Link to="/" className="menu__item" onClick={closeMenuHandler}>
+          Home
+        </Link>
+        <Link to="/favoritos" className="menu__item" onClick={closeMenuHandler}>
+          Favorites
+        </Link>
+      </Menu>
+    </div>
   );
 };
 
