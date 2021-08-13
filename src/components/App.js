@@ -1,13 +1,14 @@
+//COMPONENTS
+import Header from "./1 - Header";
+
 //STYLES
 import "../stylesheets/App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Hola mundo</p>
-      </header>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
 
