@@ -12,12 +12,16 @@
   padding: 5%;
   border-radius: 25px;
   @include tablet() {
+    width: 90%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: row;
     grid-template-areas:
       "title title title"
       "generalinformation generalinformation flag"
       "generalinformation generalinformation socialInformation";
+  }
+  @include desktop() {
+    width: 60%;
   }
 
   &__title {
@@ -28,6 +32,14 @@
       text-transform: uppercase;
       font-size: 2rem;
       letter-spacing: 0.1rem;
+      @include tablet() {
+        padding-left: 2%;
+        font-size: 2.5rem;
+      }
+      @include desktop() {
+        padding-left: 1%;
+        font-size: 3rem;
+      }
     }
   }
   &__flag {
@@ -37,6 +49,9 @@
   }
   &__information {
     grid-area: generalinformation;
+    @include tablet() {
+      align-self: center;
+    }
 
     &--timezone {
       padding: 10px 0 0;
@@ -47,6 +62,9 @@
   }
   &__socialInformation {
     grid-area: socialInformation;
+    @include tablet() {
+      align-self: end;
+    }
 
     &--language {
       padding: 10px 0 0;
