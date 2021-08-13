@@ -14,13 +14,19 @@ const Main = () => {
   useEffect(() => {
     const apiURL = "https://restcountries.eu/rest/v2/all";
 
-    axios.get(apiURL).then((res) => {
-      setCountries(res.data);
-    });
-  }, []);
+    axios
+      .get(apiURL)
+      .then((res) => {
+        setCountries(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [countries]);
 
+  if (!countries) return null;
   return (
-    <main>
+    <main className="main">
       <Switch>
         <Route exact path={["/", "/countries"]}>
           <CountryList countries={countries} />

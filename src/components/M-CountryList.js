@@ -4,19 +4,18 @@ import CountryCard from "./M-CountryCard";
 const CountryList = (props) => {
   const country = props.countries.map((country) => {
     return (
-      <li>
+      <li className="countryList__card">
         <CountryCard
           name={country.name}
-          nativeName={country.nativeName}
           flag={country.flag}
+          nativeName={country.nativeName}
         />
       </li>
     );
   });
   return (
-    <section>
-      {" "}
-      <ul>{country}</ul>
+    <section className="countries">
+      <ul className="countryList">{country}</ul>
     </section>
   );
 };
