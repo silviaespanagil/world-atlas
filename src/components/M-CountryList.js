@@ -8,12 +8,16 @@ const CountryList = (props) => {
         <CountryCard
           name={country.name}
           nativeName={country.nativeName}
-          capital={country.capital}
           flag={country.flag}
         />
       </li>
     );
   });
-  return <ul>{country}</ul>;
+  return (
+    <section>
+      {" "}
+      <ul>{country}</ul>
+    </section>
+  );
 };
 export default CountryList;
