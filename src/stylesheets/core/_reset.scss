@@ -1,0 +1,20 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  color: $colorGray;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: $fontMontserrat;
+}
+#root {
+  height: 100vh;
+}
+body {
+  background-color: $colorBurgundy;
+}
