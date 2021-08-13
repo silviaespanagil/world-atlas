@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 //COMPONENTS
+import HorizontalMenu from "./H-HorizontalMenu";
 
 //PACKAGES
 import { slide as Menu } from "react-burger-menu";
@@ -14,6 +15,7 @@ const Header = (props) => {
         </Link>
         <Link to="/favoritos">Favorites</Link>
       </Menu>
+      <HorizontalMenu />
     </header>
   );
 };
