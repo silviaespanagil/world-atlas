@@ -1,0 +1,55 @@
+.cDetail {
+  display: grid;
+  width: 90%;
+  grid-template-columns: 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    "title"
+    "flag"
+    "generalinformation"
+    "socialInformation";
+  background-color: $colorGreen;
+  padding: 5%;
+  border-radius: 25px;
+  @include tablet() {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "title title title"
+      "generalinformation generalinformation flag"
+      "generalinformation generalinformation socialInformation";
+  }
+
+  &__title {
+    grid-area: title;
+    color: $colorBurgundy;
+    &--country {
+      color: $colorYellow;
+      text-transform: uppercase;
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+  &__flag {
+    grid-area: flag;
+    width: 100%;
+    height: 100%;
+  }
+  &__information {
+    grid-area: generalinformation;
+
+    &--timezone {
+      padding: 10px 0 0;
+    }
+    &--currency {
+      padding: 10px 0 0;
+    }
+  }
+  &__socialInformation {
+    grid-area: socialInformation;
+
+    &--language {
+      padding: 10px 0 0;
+    }
+  }
+}

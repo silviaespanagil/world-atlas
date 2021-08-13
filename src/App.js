@@ -1,9 +1,9 @@
 //COMPONENTS
-import Header from "./Header";
-import Main from "./Main";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 //STYLES
-import "../stylesheets/App.scss";
+import "./stylesheets/App.scss";
 
 function App() {
   return (
