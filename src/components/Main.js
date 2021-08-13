@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 
 //COMPONENTS
 import CountryList from "./M-CountryList";
+import CountryDetail from "./M-CountryDetail";
 
 const Main = () => {
   //STATES
@@ -25,12 +26,25 @@ const Main = () => {
   }, [countries]);
 
   if (!countries) return null;
+
+  //RENDER DINAMIC ROUTE FOR COUNTRY DETAIL
+  const renderCountryDetail = (routerProps) => {
+    const routerId = routerProps.match.params.id;
+    const countryFound = countries.find(
+      (country) => country.alpha2Code === routerId
+    );
+    if (countryFound) {
+      return <CountryDetail country={countryFound} />;
+    }
+  };
+
   return (
     <main className="main">
       <Switch>
         <Route exact path={["/", "/countries"]}>
-          <CountryList countries={countries} />
+          <CountryList countries={countries} />{" "}
         </Route>
+        <Route path="/countries/:id" render={renderCountryDetail} />
       </Switch>
     </main>
   );

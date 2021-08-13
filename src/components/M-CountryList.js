@@ -9,6 +9,7 @@ const CountryList = (props) => {
           name={country.name}
           flag={country.flag}
           nativeName={country.nativeName}
+          alpha2Code={country.alpha2Code}
         />
       </li>
     );
