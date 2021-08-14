@@ -18,7 +18,7 @@ const SearchArea = (props) => {
         <input
           id="search"
           type="search"
-          placeholder="Search a country"
+          placeholder="Search a country or capital"
           className="searchArea__form--search-input"
           onChange={handleSearchBox}
         />

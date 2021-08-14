@@ -48,7 +48,10 @@ const Main = () => {
 
   const renderFilters = countries
     .filter((country) => {
-      return country.name.toLowerCase().includes(userCountrySearch);
+      return (
+        country.name.toLowerCase().includes(userCountrySearch) ||
+        country.capital.toLowerCase().includes(userCountrySearch)
+      );
     })
     .filter((country) => {
       if (continentFilter === "All") {
