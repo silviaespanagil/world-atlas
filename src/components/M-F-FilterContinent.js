@@ -4,7 +4,7 @@ const FilterContinent = (props) => {
   };
 
   return (
-    <label htmlFor="continent" className="filters__label">
+    <label className="filters__label" htmlFor="continent">
       Filter by Continent
       <select
         id="continent"

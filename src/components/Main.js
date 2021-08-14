@@ -5,9 +5,7 @@ import { Route, Switch } from "react-router-dom";
 //COMPONENTS
 import CountryList from "./M-CountryList";
 import CountryDetail from "./M-CountryDetail";
-//FILTER COMPONENTS
-import SearchArea from "./M-F-SearchArea";
-import FilterContinent from "./M-F-FilterContinent";
+import Filters from "./M-Filters";
 
 const Main = () => {
   //STATES
@@ -16,7 +14,7 @@ const Main = () => {
 
   //FILTERS
   const [userCountrySearch, setUserCountrySearch] = useState("");
-  const [continentFilter, setContinentFilter] = useState("");
+  const [continentFilter, setContinentFilter] = useState("All");
 
   //API
   useEffect(() => {
@@ -76,11 +74,8 @@ const Main = () => {
     <main className="main">
       <Switch>
         <Route exact path={["/", "/countries"]}>
-          <SearchArea handleFilters={handleFilters} />
-          <form>
-            <FilterContinent handleFilters={handleFilters} />
-          </form>
-          <CountryList countries={renderFilters} />{" "}
+          <Filters handleFilters={handleFilters} />
+          <CountryList countries={renderFilters} />
         </Route>
         <Route path="/countries/:id" render={renderCountryDetail} />
       </Switch>

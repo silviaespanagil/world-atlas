@@ -1,0 +1,21 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: space-evenly;
+  align-items: center;
+  &__label {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: $colorYellow;
+    font-size: 0.8rem;
+  }
+  &__select {
+    color: $colorNoBlack;
+    border-radius: 25px;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: rgba(192, 192, 192, 0.5);
+  }
+}

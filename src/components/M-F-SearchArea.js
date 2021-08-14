@@ -13,7 +13,7 @@ const SearchArea = (props) => {
   };
 
   return (
-    <form className="searchArea__form" onSubmit={preventDefault}>
+    <div className="searchArea__form" onSubmit={preventDefault}>
       <label htmlFor="searchBar" className="searchArea__form--search">
         <input
           id="search"
@@ -23,7 +23,7 @@ const SearchArea = (props) => {
           onChange={handleSearchBox}
         />
       </label>
-    </form>
+    </div>
   );
 };
 export default SearchArea;
