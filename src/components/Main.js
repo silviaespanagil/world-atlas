@@ -7,6 +7,7 @@ import CountryList from "./M-CountryList";
 import CountryDetail from "./M-CountryDetail";
 //FILTER COMPONENTS
 import SearchArea from "./M-F-SearchArea";
+import FilterContinent from "./M-F-FilterContinent";
 
 const Main = () => {
   //STATES
@@ -15,6 +16,7 @@ const Main = () => {
 
   //FILTERS
   const [userCountrySearch, setUserCountrySearch] = useState("");
+  const [continentFilter, setContinentFilter] = useState("");
 
   //API
   useEffect(() => {
@@ -37,13 +39,24 @@ const Main = () => {
     if (filterData.key === "country") {
       setUserCountrySearch(filterData.searchValue);
     }
+    if (filterData.key === "continent") {
+      setContinentFilter(filterData.continentValue);
+    }
   };
 
   //RENDER FILTERS
 
-  const renderFilters = countries.filter((country) => {
-    return country.name.toLowerCase().includes(userCountrySearch);
-  });
+  const renderFilters = countries
+    .filter((country) => {
+      return country.name.toLowerCase().includes(userCountrySearch);
+    })
+    .filter((country) => {
+      if (continentFilter === "All") {
+        return true;
+      } else {
+        return country.region === continentFilter;
+      }
+    });
 
   //RENDER DINAMIC ROUTE FOR COUNTRY DETAIL
   const renderCountryDetail = (routerProps) => {
@@ -61,6 +74,9 @@ const Main = () => {
       <Switch>
         <Route exact path={["/", "/countries"]}>
           <SearchArea handleFilters={handleFilters} />
+          <form>
+            <FilterContinent handleFilters={handleFilters} />
+          </form>
           <CountryList countries={renderFilters} />{" "}
         </Route>
         <Route path="/countries/:id" render={renderCountryDetail} />
