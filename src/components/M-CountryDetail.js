@@ -24,7 +24,7 @@ const CountryDetail = (props) => {
     );
   });
   return (
-    <>
+    <section className="countryDetail">
       <BackButton />
       <article className="cDetail" key={props.country.alpha3Code}>
         <img
@@ -61,7 +61,7 @@ const CountryDetail = (props) => {
           src={`http://maps.google.com/maps?q=${props.country.latlng[0]},${props.country.latlng[1]}&t=&z=4&ie=UTF8&iwloc=&output=embed`}
         ></iframe>
       </article>
-    </>
+    </section>
   );
 };
 export default CountryDetail;
