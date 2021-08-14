@@ -20,4 +20,5 @@ const CountryList = (props) => {
     </section>
   );
 };
+
 export default CountryList;

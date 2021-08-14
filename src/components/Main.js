@@ -11,6 +11,7 @@ const Main = () => {
   //STATES
   //MAIN
   const [countries, setCountries] = useState();
+  const [favorites, setFavorites] = useState();
 
   //FILTERS
   const [userCountrySearch, setUserCountrySearch] = useState("");
