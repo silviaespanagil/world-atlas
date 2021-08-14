@@ -7,7 +7,7 @@
     "title"
     "flag"
     "generalinformation"
-    "socialInformation";
+    "socialInformation" "map";
   background-color: $colorGreen;
   padding: 5%;
   border-radius: 25px;
@@ -18,7 +18,7 @@
     grid-template-areas:
       "title title title"
       "generalinformation generalinformation flag"
-      "generalinformation generalinformation socialInformation";
+      "generalinformation generalinformation socialInformation" "map map map";
   }
   @include desktop() {
     width: 60%;
@@ -45,7 +45,6 @@
   &__flag {
     grid-area: flag;
     width: 100%;
-    height: 100%;
   }
   &__information {
     grid-area: generalinformation;
@@ -69,5 +68,9 @@
     &--language {
       padding: 10px 0 0;
     }
+  }
+  &__map {
+    grid-area: map;
+    width: 100%;
   }
 }
