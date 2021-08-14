@@ -5,11 +5,11 @@
   justify-content: space-evenly;
   align-items: center;
   &__label {
-    width: fit-content;
     display: flex;
     flex-direction: column;
     color: $colorYellow;
     font-size: 0.8rem;
+    padding: 5px;
   }
   &__select {
     color: $colorNoBlack;
@@ -17,5 +17,14 @@
     padding: 5px;
     margin-top: 10px;
     background-color: rgba(192, 192, 192, 0.5);
+  }
+  &__dropdowns {
+    display: flex;
+    flex-direction: column;
+    @include tablet() {
+      flex-direction: row;
+      width: 80%;
+      justify-content: space-evenly;
+    }
   }
 }
