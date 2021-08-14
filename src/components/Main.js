@@ -15,6 +15,7 @@ const Main = () => {
   //FILTERS
   const [userCountrySearch, setUserCountrySearch] = useState("");
   const [continentFilter, setContinentFilter] = useState("All");
+  const [languageFilter, setLanguageFilter] = useState("All");
 
   //API
   useEffect(() => {
@@ -40,6 +41,9 @@ const Main = () => {
     if (filterData.key === "continent") {
       setContinentFilter(filterData.continentValue);
     }
+    if (filterData.key === "language") {
+      setLanguageFilter(filterData.languageValue);
+    }
   };
 
   //RENDER FILTERS
@@ -56,6 +60,16 @@ const Main = () => {
         return true;
       } else {
         return country.region === continentFilter;
+      }
+    })
+    .filter((country) => {
+      if (languageFilter === "All") {
+        return true;
+      } else {
+        const language = country.languages.map((language) => {
+          return language.name;
+        });
+        return language.includes(languageFilter);
       }
     });
 
