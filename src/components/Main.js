@@ -2,15 +2,21 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 
+//SERVICES
+import localStorage from "../services/LocalStorage";
+
 //COMPONENTS
 import CountryList from "./M-CountryList";
 import CountryDetail from "./M-CountryDetail";
 import Filters from "./M-Filters";
 
 const Main = () => {
+  //LOCALSTORAGE - GET
+  const localCountries = localStorage.get("Countries", []);
+
   //STATES
   //MAIN
-  const [countries, setCountries] = useState();
+  const [countries, setCountries] = useState(localCountries);
   const [favorites, setFavorites] = useState();
 
   //FILTERS
@@ -21,16 +27,17 @@ const Main = () => {
   //API
   useEffect(() => {
     const apiURL = "https://restcountries.eu/rest/v2/all";
-
-    axios
-      .get(apiURL)
-      .then((res) => {
+    if (localCountries.length === 0) {
+      axios.get(apiURL).then((res) => {
         setCountries(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
       });
-  }, [countries]);
+    }
+  }, [localCountries]);
+
+  //LOCALSTORAGE - SET
+  useEffect(() => {
+    localStorage.set("Countries", countries);
+  });
 
   if (!countries) return null;
 

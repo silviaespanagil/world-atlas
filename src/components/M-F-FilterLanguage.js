@@ -16,8 +16,12 @@ const FilterLanguage = (props) => {
     props.handleFilters({ languageValue: ev.target.value, key: "language" });
   };
 
-  const renderLanguages = languages.map((language) => {
-    return <option value={language}>{language}</option>;
+  const renderLanguages = languages.map((language, index) => {
+    return (
+      <option value={language} key={index}>
+        {language}
+      </option>
+    );
   });
 
   return (
