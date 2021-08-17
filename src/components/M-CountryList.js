@@ -1,7 +1,14 @@
 //COMPONENT
 import CountryCard from "./M-CountryCard";
+import NoResults from "./M-F-NoResults";
 
 const CountryList = (props) => {
+  //RENDER NO RESULTS
+  if (props.countries.length === 0) {
+    return <NoResults userCountrySearch={props.userCountrySearch} />;
+  }
+
+  //RENDER COUNTRIES
   const country = props.countries.map((country, index) => {
     const isFavorite = props.favorites.find(
       (favorite) => favorite.alpha2Code === country.alpha2Code

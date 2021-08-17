@@ -124,6 +124,7 @@ const Main = () => {
             countries={renderFilters}
             favCountry={favCountry}
             favorites={favorites}
+            userCountrySearch={userCountrySearch}
           />
         </Route>
         <Route path="/countries/:id" render={renderCountryDetail} />
