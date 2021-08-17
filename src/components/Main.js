@@ -13,11 +13,12 @@ import Filters from "./M-Filters";
 const Main = () => {
   //LOCALSTORAGE - GET
   const localCountries = localStorage.get("Countries", []);
+  const localFavorites = localStorage.get("Favorites", []);
 
   //STATES
   //MAIN
   const [countries, setCountries] = useState(localCountries);
-  const [favorites, setFavorites] = useState();
+  const [favorites, setFavorites] = useState(localFavorites);
 
   //FILTERS
   const [userCountrySearch, setUserCountrySearch] = useState("");
@@ -37,9 +38,30 @@ const Main = () => {
   //LOCALSTORAGE - SET
   useEffect(() => {
     localStorage.set("Countries", countries);
+    localStorage.set("Favorites", favorites);
   });
 
   if (!countries) return null;
+
+  //FAVORITES - SET
+
+  const favCountry = (clickedCard) => {
+    const favoritedCountry = favorites.find((country) => {
+      return country.alpha2Code === clickedCard;
+    });
+    if (favoritedCountry === undefined) {
+      const countryFav = countries.find((country) => {
+        return country.alpha2Code === clickedCard;
+      });
+      setFavorites([...favorites, countryFav]);
+
+      return;
+    }
+    const newFavorites = favorites.filter(
+      (country) => country.alpha2Code !== clickedCard
+    );
+    setFavorites(newFavorites);
+  };
 
   //HANDLE FILTERS
   const handleFilters = (filterData) => {
@@ -97,7 +119,11 @@ const Main = () => {
       <Switch>
         <Route exact path={["/", "/countries"]}>
           <Filters handleFilters={handleFilters} />
-          <CountryList countries={renderFilters} />
+          <CountryList
+            countries={renderFilters}
+            favCountry={favCountry}
+            favorites={favorites}
+          />
         </Route>
         <Route path="/countries/:id" render={renderCountryDetail} />
       </Switch>
