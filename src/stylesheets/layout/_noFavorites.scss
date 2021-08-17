@@ -1,0 +1,16 @@
+.noFav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__title {
+    color: $colorYellow;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+  }
+  &__paragraph {
+    color: $colorYellow;
+    padding-bottom: 30px;
+  }
+}

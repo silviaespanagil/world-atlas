@@ -1,6 +1,13 @@
+//COMPONENTS
 import CountryCard from "./M-CountryCard";
+import NoFavorites from "./M-NoFavorites";
 
 const Favorites = (props) => {
+  //RENDER NO FAVORITES COMPONENT
+  if (props.favorites.length === 0) {
+    return <NoFavorites />;
+  }
+
   const favoriteCountries = props.favorites.map((favorite, index) => {
     const isFavorite = props.countries.find(
       (country) => favorite.alpha2Code === country.alpha2Code

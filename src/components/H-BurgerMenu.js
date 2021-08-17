@@ -20,7 +20,7 @@ const BurgerMenu = () => {
         <Link to="/" className="menu__item" onClick={closeMenuHandler}>
           Home
         </Link>
-        <Link to="/favoritos" className="menu__item" onClick={closeMenuHandler}>
+        <Link to="/favorites" className="menu__item" onClick={closeMenuHandler}>
           Favorites
         </Link>
       </Menu>
