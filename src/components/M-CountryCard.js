@@ -15,9 +15,6 @@ const CountryCard = (props) => {
         <h2 className="countryList__card--name">{props.name}</h2>
         <p className="countryList__card--native">{props.nativeName}</p>
       </Link>
-      <button aria-label="favorite icon button">
-        <i className="far fa-lg fa-star"></i>
-      </button>
     </>
   );
 };

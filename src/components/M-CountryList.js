@@ -8,6 +8,12 @@ const CountryList = (props) => {
     );
     return (
       <li className="countryList__card" key={index}>
+        <CountryCard
+          name={country.name}
+          flag={country.flag}
+          nativeName={country.nativeName}
+          alpha2Code={country.alpha2Code}
+        />{" "}
         <button
           id={index}
           onClick={() => props.favCountry(country.alpha2Code)}
@@ -17,12 +23,6 @@ const CountryList = (props) => {
             className={isFavorite ? "fas fa-lg fa-star" : "far fa-lg fa-star"}
           ></i>
         </button>
-        <CountryCard
-          name={country.name}
-          flag={country.flag}
-          nativeName={country.nativeName}
-          alpha2Code={country.alpha2Code}
-        />
       </li>
     );
   });
