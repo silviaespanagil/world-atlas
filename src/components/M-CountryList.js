@@ -17,10 +17,15 @@ const CountryList = (props) => {
         <button
           id={index}
           onClick={() => props.favCountry(country.alpha2Code)}
+          className="countryList__card--favorite"
           aria-label="favorite icon button"
         >
           <i
-            className={isFavorite ? "fas fa-lg fa-star" : "far fa-lg fa-star"}
+            className={
+              isFavorite
+                ? "fas fa-lg fa-star countryList__card--favorite-icon"
+                : "far fa-lg fa-star countryList__card--favorite-icon"
+            }
           ></i>
         </button>
       </li>

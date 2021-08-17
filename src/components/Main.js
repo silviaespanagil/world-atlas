@@ -9,6 +9,7 @@ import localStorage from "../services/LocalStorage";
 import CountryList from "./M-CountryList";
 import CountryDetail from "./M-CountryDetail";
 import Filters from "./M-Filters";
+import Favorites from "./M-Favorites";
 
 const Main = () => {
   //LOCALSTORAGE - GET
@@ -126,6 +127,13 @@ const Main = () => {
           />
         </Route>
         <Route path="/countries/:id" render={renderCountryDetail} />
+        <Route path="/favorites">
+          <Favorites
+            favorites={favorites}
+            countries={renderFilters}
+            favCountry={favCountry}
+          />
+        </Route>
       </Switch>
     </main>
   );

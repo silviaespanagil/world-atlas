@@ -12,8 +12,8 @@ const HorizontalMenu = () => {
           <Link to="/">
             <li className="hMenu__item">Home</li>
           </Link>
-          <Link to="/favoritos">
-            <li className="hMenu__item">Favoritos</li>
+          <Link to="/favorites">
+            <li className="hMenu__item">Favorites</li>
           </Link>
         </ul>
       </nav>
