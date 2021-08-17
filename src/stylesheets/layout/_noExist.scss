@@ -1,0 +1,14 @@
+.noExist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__text {
+    color: $colorYellow;
+  }
+  &__img {
+    width: 50%;
+    @include tablet() {
+      width: 30%;
+    }
+  }
+}

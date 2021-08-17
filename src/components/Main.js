@@ -10,6 +10,7 @@ import CountryList from "./M-CountryList";
 import CountryDetail from "./M-CountryDetail";
 import Filters from "./M-Filters";
 import Favorites from "./M-Favorites";
+import NoExist from "./M-NoExist";
 
 const Main = () => {
   //LOCALSTORAGE - GET
@@ -135,6 +136,7 @@ const Main = () => {
             favCountry={favCountry}
           />
         </Route>
+        <Route component={NoExist} />
       </Switch>
     </main>
   );
