@@ -9,9 +9,6 @@ const Favorites = (props) => {
   }
 
   const favoriteCountries = props.favorites.map((favorite, index) => {
-    const isFavorite = props.countries.find(
-      (country) => favorite.alpha2Code === country.alpha2Code
-    );
     return (
       <li className="countryList__card" key={index}>
         <CountryCard
@@ -27,11 +24,8 @@ const Favorites = (props) => {
           aria-label="favorite icon button"
         >
           <i
-            className={
-              isFavorite
-                ? "fas fa-lg fa-star countryList__card--favorite-icon"
-                : "far fa-lg fa-star countryList__card--favorite-icon"
-            }
+            className="fas fa-lg fa-trash-alt countryList__card--favorite-icon"
+            title="Delete from favorites"
           ></i>
         </button>
       </li>

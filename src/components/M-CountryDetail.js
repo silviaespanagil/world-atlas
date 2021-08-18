@@ -58,7 +58,7 @@ const CountryDetail = (props) => {
         <iframe
           className="cDetail__map"
           title="Map representation"
-          src={`http://maps.google.com/maps?q=${props.country.latlng[0]},${props.country.latlng[1]}&t=&z=4&ie=UTF8&iwloc=&output=embed`}
+          src={`https://maps.google.com/maps?q=${props.country.latlng[0]},${props.country.latlng[1]}&t=&z=4&ie=UTF8&iwloc=&output=embed`}
         ></iframe>
       </article>
     </section>

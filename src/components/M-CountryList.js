@@ -33,6 +33,7 @@ const CountryList = (props) => {
                 ? "fas fa-lg fa-star countryList__card--favorite-icon"
                 : "far fa-lg fa-star countryList__card--favorite-icon"
             }
+            title="Add to favorites"
           ></i>
         </button>
       </li>
