@@ -5,12 +5,12 @@ const NoResults = (props) => {
   return (
     <section className="noResults">
       <p className="noResults__text">
-        There is no country or capital called{" "}
+        There is no country or capital that fits your search{" "}
         <span className="noResults__text--search">
           {props.userCountrySearch}
         </span>{" "}
-        Try again!
       </p>
+      <p className="noResults__text">Try again!</p>
       <img
         src={Earth}
         alt="Gif of the globe spinning"
