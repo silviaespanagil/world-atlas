@@ -86,11 +86,13 @@ As an user sometimes is frustrating when things doesn't work as expected. For th
 
 As a junior there are a lot of things I do not know...yet💪! but I really love trying things. My main challenge was  the backend bonus. That sadly I was not able to pull out by myself, but I tried!
 
-My first try was with Express, BetterSql and SQLite as I encountered some issues, I went out and tried to see some videos and mini courses to find out a way to figure out. This way I found myself working with Express, Sequelize, SQLite and Postman, with the extra challenge that Sequelize uses Typescritp and I'm not fluent with it just yet.
+My first try was with Express, BetterSql and SQLite. As I encountered some issues, I went out and tried to see some videos and mini courses to find out a way to figure out. This way I found myself working with Express, Sequelize, SQLite and Postman, with the extra challenge that Sequelize uses Typescritp and I'm not fluent with it just yet.
 
 ![image](https://user-images.githubusercontent.com/81619759/129937550-6f74d593-7d36-4896-91e7-4687a8aa7e77.png)
 
-With this new combo things went better and I was able to make a POST, via Postman but, when I tried to GET, it just didn't worked out and I couldn't get it through so I decided to let it be with the LocalStorage and definetly will keep learning about back. 
+With this new combo things went better and I was able to make a POST, via Postman but, when I tried to GET, it just didn't worked out and I couldn't get it through so I decided to let it be with the LocalStorage.
+
+My future challenge is to keep on learning until I'm able to add backend to my projects. I  couldn't do it this time, but I'm glad that I tried it.
 
 
 
