@@ -10,6 +10,13 @@ const Filters = (props) => {
       <div className="filters__dropdowns">
         <FilterContinent handleFilters={props.handleFilters} />
         <FilterLanguage handleFilters={props.handleFilters} />
+        <button
+          className="filters__reset"
+          onClick={props.handleFilterReset}
+          title="Reset filters"
+        >
+          <i className="fas fa-redo-alt filters__reset-icon"></i>
+        </button>
       </div>
     </form>
   );

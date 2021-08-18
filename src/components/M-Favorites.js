@@ -5,7 +5,7 @@ import NoFavorites from "./M-NoFavorites";
 const Favorites = (props) => {
   //RENDER NO FAVORITES COMPONENT
   if (props.favorites.length === 0) {
-    return <NoFavorites />;
+    return <NoFavorites handleFilterReset={props.handleFilterReset} />;
   }
 
   const favoriteCountries = props.favorites.map((favorite, index) => {

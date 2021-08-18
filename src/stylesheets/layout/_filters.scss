@@ -21,10 +21,25 @@
   &__dropdowns {
     display: flex;
     flex-direction: column;
+    align-items: center;
     @include tablet() {
       flex-direction: row;
       width: 80%;
       justify-content: space-evenly;
+    }
+  }
+  &__reset {
+    border-radius: 50px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $colorGray;
+    cursor: pointer;
+    &-icon {
+      font-size: 1rem;
+      transform: scaleX(-1);
     }
   }
 }

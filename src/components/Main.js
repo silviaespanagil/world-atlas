@@ -78,6 +78,14 @@ const Main = () => {
     }
   };
 
+  //HANDLE  FILTER RESET
+
+  const handleFilterReset = () => {
+    setUserCountrySearch("");
+    setContinentFilter("All");
+    setLanguageFilter("All");
+  };
+
   //RENDER FILTERS
 
   const renderFilters = countries
@@ -120,12 +128,16 @@ const Main = () => {
     <main className="main">
       <Switch>
         <Route exact path={["/", "/countries"]}>
-          <Filters handleFilters={handleFilters} />
+          <Filters
+            handleFilters={handleFilters}
+            handleFilterReset={handleFilterReset}
+          />
           <CountryList
             countries={renderFilters}
             favCountry={favCountry}
             favorites={favorites}
             userCountrySearch={userCountrySearch}
+            handleFilterReset={handleFilterReset}
           />
         </Route>
         <Route path="/countries/:id" render={renderCountryDetail} />
@@ -134,6 +146,7 @@ const Main = () => {
             favorites={favorites}
             countries={renderFilters}
             favCountry={favCountry}
+            handleFilterReset={handleFilterReset}
           />
         </Route>
         <Route component={NoExist} />

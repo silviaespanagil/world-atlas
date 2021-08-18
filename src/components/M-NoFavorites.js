@@ -16,7 +16,7 @@ const NoFavorites = (props) => {
       <p className="noFav__paragraph">
         You have no favorite countries yet...go back and add some
       </p>
-      <BackButton />
+      <BackButton handleFilterReset={props.handleFilterReset} />
     </section>
   );
 };
