@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# React App: World Atlas
+## _Tokiota exercise_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+¡Hola mundo!
 
-## Available Scripts
+After I was asked to do a web app with the [Rest Countries API](https://restcountries.eu/) the first thing that came into my mind was an Atlas, an enriched atlas with not only with a map but also with the information that the  API  provides 🌍.
 
-In the project directory, you can run:
+The app allows you to see a list of countries that can be filtered by language and continent. The home area also has a search box where the user can search 🔎 for a country or even a capital. Filters are not independent, this means that the user can apply one or more search methods for better accuracy.
 
-### `npm start`
+After finding a country user can click on it to see further detail such as: Capital of the country, timezone, currency, population, official languages and a map that pins the country with a world perspective 🚩.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Another possible action for the user is to create a ⭐Favorite List⭐. Each country card has a star to favorite the country and the user can access to its own list in the "Favorite" area where's also posible to erase them. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="https://user-images.githubusercontent.com/81619759/129921090-a7ecc9f3-efc8-458d-9dd5-31f165663e0d.png" alt="home view from tablet breakpoint" width="400"/> <img src="https://user-images.githubusercontent.com/81619759/129923048-e1f728d5-c4be-40e3-a936-33772be131c6.png" alt="country detail" width="400"/>
 
-### `npm test`
+<img src="https://user-images.githubusercontent.com/81619759/129920947-7652e673-adbd-4250-bdf9-262ec59c624f.png" alt="favorites view from desktop breakpoint" width="400"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🚀  [World Atlas Website](https://worldatlas.netlify.app/#/)
 
-### `npm run build`
+## Some Requirements 📋
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Create a react app
+- Content must be served from an API
+- API content must be listed
+- Each country must be clickable to show further information
+- Add a search bar to search by country
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Extra features 🌟
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Add other filters such as region and language
+- Show a map with the country location
+- Add a favorite list
+- Save favorite list in localStorage and show a star when favorited. 
+- Add a backend with last searches and favorite list.
 
-### `npm run eject`
+## My own extra features 🌟
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Add a reset button to clean the filters
+- Add error pages to answer non existant searches or pages
+- Responsive
+- Semantic HTML
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Built with 🔨
+- Visual Code Studio: as code editor
+- SASS
+- React
+- Node
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Development ⌨️
 
-## Learn More
+As I do in all my projects I started doing a simple Kanban to manage some prioritization and a manual wireframe🖍️ to have a general idea of  how I wanted the app to look like. As I'm no designer I helped myself with some online tools  like [color-hex](https://www.color-hex.com/) to define my palettes so this way I could focus on the code. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+After doing that, the coding was pretty smooth because I had some idea of how to approach everything. First of all I created my react-app and installed SASS because I find that SASS along with BEM methodology helps me to have a cleaner CSS code because of the nesting. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+With SASS up, it was component time. I tried my best to separate all my components in a way that they do one thing, they can be repurposed and also to be easy to understand🗃️.
 
-### Code Splitting
+When developing my components I avoided to repeat code, for so I created some objects to render beyond the API, for example the Languages Filter Options.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src="https://user-images.githubusercontent.com/81619759/129933583-be37bc83-2df4-4822-8e79-0d15ff74ee99.png" alt="code to languages filter options" width="600"/> 
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Some things I really like 💖
 
-### Making a Progressive Web App
+🗺️**Map**🗺️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I love first times, and this is the first time I use Google Map to render a map with a dinamic location. I found that there's more than one way to show the map, the one I choosed has an open perspective that I thought fitted better the app as we are not showing small locations but countries.
 
-### Advanced Configuration
+🔎**Extended search**🔎
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Yes, I know this is pretty small **but** sometimes our  minds works in misterious ways and someone ask us  for a country and we say a city. For this  reason I wanted the search bar to allow the user to search either a country or capital 🌎
 
-### Deployment
+😨**Error pages**😨
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+As an user sometimes is frustrating when things doesn't work as expected. For that reason I did three different components for possible errors so the user can receive accurate feedback.
 
-### `npm run build` fails to minify
+- No results: With a message that calls "There is no country or capital that fits your search". In case that the're no results because the country tiped down doesn't exist. If there's  a value on the search bar the message will make reference to it. PD: Next to the filters there's a reset button to delete all the inputs values.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="https://user-images.githubusercontent.com/81619759/129935850-cfc39db7-4f0b-44c9-a5be-029c2f9dd47e.png" alt="No Results view" width="400"/>
+
+- No Favorites: To avoid that the favorite page will render empty, if the favorite array  is empty the user will find a message saying that there are  no favorites, and can add them on the main page. This  page  has a back button.
+
+- No Exist: This is a page with missing coordinates. If the user enters or type an unexistant page, we will let him now that is  lost and invite him back with a back button.
+
+### My challenges 🚩
+
+As a junior there are a lot of things I do not know...yet💪! but I really love trying things. My main challenge was  the backend bonus. That sadly I was not able to pull out by myself, but I tried!
+
+My first try was with Express, BetterSql and SQLite as I encountered some issues, I went out and tried to see some videos and mini courses to find out a way to figure out. This way I found myself working with Express, Sequelize, SQLite and Postman, with the extra challenge that Sequelize uses Typescritp and I'm not fluent with it just yet.
+
+![image](https://user-images.githubusercontent.com/81619759/129937550-6f74d593-7d36-4896-91e7-4687a8aa7e77.png)
+
+With this new combo things went better and I was able to make a POST, via Postman but, when I tried to GET, it just didn't worked out and I couldn't get it through so I decided to let it be with the LocalStorage and definetly will keep learning about back. 
+
+
+
+## Run my code 🔧
+
+Install dependencies
+`npm install` 
+
+Run it
+`npm start`
+
+## Codefactor 
+[![CodeFactor](https://www.codefactor.io/repository/github/silviaespanagil/world-atlas/badge)](https://www.codefactor.io/repository/github/silviaespanagil/world-atlas)
